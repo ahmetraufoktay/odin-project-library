@@ -3,6 +3,7 @@ body {
     padding: 0;
     background-color: rgb(250, 246, 246);
 }
+/* header */
 header {
     height: 100px;
     margin: 0;
@@ -22,7 +23,87 @@ button#add-book > svg { /* green svg of add book button */
 button#add-book {
     border-style: none;
     background-color: transparent;
+    cursor: pointer;
 }
+/* add book screen */
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(60, 60, 60, 0.5);
+    z-index: 2;
+}
+#form-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form { /* form */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    #name { /*book name */
+        width: 300px;
+        height: 24px;
+    }
+    #author {
+        width: 300px;
+        height: 24px;
+    }
+    #pages {
+        width: 300px;
+        height: 24px;
+    }
+    #colors {
+        width: 308px;
+        height: 30px;
+    }
+    label[for='read'] {
+        height: 40px;
+        align-self: center;
+        justify-content: center;
+    }
+    #submit-book {
+        cursor: pointer;
+        width: 40%;
+        justify-self: center;
+        align-self: center;
+        height: 50px;
+        background-color: rgb(79, 207, 79);
+        border-style: none;
+        border: 1px solid rgb(255, 209, 209);
+        border-radius: 10px;
+        font-size: 20px;
+        color: white;
+    }
+    #submit-book:active {
+        transform: scale(95%);
+    }
+}
+button#close { /* close button */
+    border-style: none;
+    background-color: transparent;
+    align-self: flex-end;
+    cursor: pointer;
+    svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+/* bookshelves */
+
 .bookshelf {
     display: flex;
     flex-direction: column;
@@ -38,7 +119,7 @@ button#add-book {
     position: relative;
     top: 20px;
 }
-.svg {
+.wooden-shelf {
     margin: 0;
     padding: 0;
 }
