@@ -11,7 +11,7 @@
     <header>
         Library
         <div> <!-- add button svg green -->
-            <button id="add-book">
+            <button id="open-overlay">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
                     <defs>
                     </defs>
@@ -26,11 +26,11 @@
     </header>
     <div id="overlay">
         <div id="form-container">
-            <form action="#">
+            <form>
                 <button id="close">
                     <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 122.88"><defs><style>.cls-1{fill:#f44336;fill-rule:evenodd;}</style></defs><title>close-red</title><path class="cls-1" d="M61.44,0A61.44,61.44,0,1,1,0,61.44,61.44,61.44,0,0,1,61.44,0ZM74.58,36.8c1.74-1.77,2.83-3.18,5-1l7,7.13c2.29,2.26,2.17,3.58,0,5.69L73.33,61.83,86.08,74.58c1.77,1.74,3.18,2.83,1,5l-7.13,7c-2.26,2.29-3.58,2.17-5.68,0L61.44,73.72,48.63,86.53c-2.1,2.15-3.42,2.27-5.68,0l-7.13-7c-2.2-2.15-.79-3.24,1-5l12.73-12.7L36.35,48.64c-2.15-2.11-2.27-3.43,0-5.69l7-7.13c2.15-2.2,3.24-.79,5,1L61.44,49.94,74.58,36.8Z"/></svg>
                 </button>
-                <label for="name">Book Name</label>
+                <label for="name">Book Name (35 Characters)</label>
                 <input type="text" id="name">
                 <label for="author">Author</label>
                 <input type="text" id="author">
@@ -52,7 +52,7 @@
         </div>
     </div>
     <div class="bookshelf">
-        <div class="books">
+        <div class="books" id="books">
             <div class="book">
                 <svg width="70" height="311" viewBox="0 0 70 311" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 9.00001C0 7.89544 0.895431 7 2 7H68C69.1046 7 70 7.89543 70 9V304.874C70 305.837 69.3051 306.665 68.3581 306.84C41.7271 311.75 26.3585 312.962 1.5215 306.912C0.630872 306.695 0 305.893 0 304.976V9.00001Z" fill="#6A1488"/>
@@ -62,6 +62,9 @@
                     <path d="M1.95312 7H67.8878L69 8H1L1.5 7.5L1.73047 7.25L1.95312 7Z" fill="#D9D9D9"/>
                     <rect x="15" y="27" width="41" height="238" fill="white" fill-opacity="0.6"/>
                     </svg>
+                    <div id="deneme" style="position: absolute; top: 15px; left: 25px; transform: rotate(90deg); transform-origin: bottom left;">
+                    denemeeeeeeeeeeeeeeeeeeeeeeeeeee
+                    </div>
             </div>
             <div class="book">
                 <svg width="70" height="311" viewBox="0 0 70 311" fill="none" xmlns="http://www.w3.org/2000/svg">
