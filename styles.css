@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(250, 246, 246);
+}
+header {
+    height: 100px;
+    margin: 0;
+    padding: 0px;
+    background-color: white;
+    border-bottom: rgba(126, 122, 122, 0.322) solid 2px;
+    font-size: 48px;
+    font-weight: bolder;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+button#add-book > svg { /* green svg of add book button */
+    width: 50px;
+    height: 50px;
+}
+button#add-book {
+    border-style: none;
+    background-color: transparent;
+}
+.bookshelf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.books {
+    width: 749px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.book {
+    position: relative;
+    top: 20px;
+}
+.svg {
+    margin: 0;
+    padding: 0;
+}
