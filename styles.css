@@ -119,6 +119,17 @@ button#close { /* close button */
     position: relative;
     top: 20px;
 }
+.text {
+    width:238px; 
+    top: 10px; 
+    left: 25px; 
+    font-size:18px;
+    transform: rotate(90deg); 
+    transform-origin:bottom left;
+    color:black;  
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: absolute; 
+}
 .wooden-shelf {
     margin: 0;
     padding: 0;
