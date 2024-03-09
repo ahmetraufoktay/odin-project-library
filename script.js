@@ -1,8 +1,10 @@
+const body = document.querySelector("body");
+
 const openOverlay = document.getElementById("open-overlay");
 const overlay = document.getElementById("overlay");
+
 const closeButton = document.getElementById("close");
 const submitBook = document.getElementById("submit-book");
-const body = document.querySelector("body");
 
 const myLibrary = [];
 let shelfElement;
@@ -22,6 +24,36 @@ function createBook(name,author,pages,color,read) {
         bookBox.innerHTML = this.color;
         bookBox.innerHTML += `<div class="text">${this.name}</div>`;
         myLibrary.push(this.name);
+
+        /* readStatus */
+        let readStatus;
+        if (this.read == false) readStatus = 'No';
+        else readStatus = "Yes";
+
+        /* modal */
+        const modal = document.createElement('dialog');
+        modal.id = 'modal';
+        modal.innerHTML = `
+        <div>Book Name: ${this.name}</div>
+        <div>Author: ${this.author}</div>
+        <div>Pages: ${this.pages}</div>
+        <div>Have You Read It?: ${readStatus}</div>
+        `
+        const closeModal = document.createElement('button');
+        closeModal.id = 'close-button';
+        closeModal.innerHTML = 'Close';
+
+        modal.appendChild(closeModal);
+
+        bookBox.addEventListener('click',()=> {
+            body.appendChild(modal);
+            modal.style.display = "block";
+            modal.showModal();
+        })
+        closeModal.addEventListener('click',()=> {
+            modal.close();
+            body.removeChild(modal);
+        })
         return bookBox
     }
 }
