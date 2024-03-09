@@ -54,17 +54,11 @@ form { /* form */
     flex-direction: column;
     gap: 10px;
 
-    #name { /*book name */
+    #name,#author,#pages {
         width: 300px;
         height: 24px;
-    }
-    #author {
-        width: 300px;
-        height: 24px;
-    }
-    #pages {
-        width: 300px;
-        height: 24px;
+        border-radius: 10px;
+        border-style:solid;
     }
     #colors {
         width: 308px;
