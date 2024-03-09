@@ -28,9 +28,7 @@ function createBook(name,author,pages,color,read) {
         myLibrary.push(this.name);
 
         /* readStatus */
-        let readStatus;
-        if (this.read == false) readStatus = 'No';
-        else readStatus = "Yes";
+        let readStatus = this.read ? 'Yes' : 'No';
 
         /* modal */
         const modal = document.createElement('dialog');
@@ -39,33 +37,42 @@ function createBook(name,author,pages,color,read) {
         <div>Book Name: ${this.name}</div>
         <div>Author: ${this.author}</div>
         <div>Pages: ${this.pages}</div>
-        <div>Have You Read It?: ${readStatus}</div>
+        <div id="readStatusDiv">Have You Read It?: ${readStatus}</div>
         `
+        /* close dialog button */
         const closeModal = document.createElement('button');
         closeModal.id = 'close-button';
         closeModal.innerHTML = 'Close';
 
+        /* change read button */
+        const changeReadButton = document.createElement('button');
+        changeReadButton.innerHTML = 'Change Read Status';
+
+        /* remove book button */
         const removeBook = document.createElement('button');
         removeBook.id = 'remove-book';
         removeBook.innerHTML = 'Remove Book';
 
+        /* append buttons to the modal */
         modal.appendChild(closeModal);
+        modal.appendChild(changeReadButton);
         modal.appendChild(removeBook);
 
+        /* eventlisteners for buttons */
         bookBox.addEventListener('click',()=> {
             body.appendChild(modal);
             modal.style.display = "block";
             modal.showModal();
 
             document.addEventListener('keydown', disableEscape);
-        })
+        });
 
         closeModal.addEventListener('click',()=> {
             modal.close();
             body.removeChild(modal);
 
             document.addEventListener('keydown', disableEscape);
-        })
+        });
 
         removeBook.addEventListener('click', ()=> {
             const bookContainer = bookBox.parentElement;
@@ -78,7 +85,17 @@ function createBook(name,author,pages,color,read) {
                 const shelf = bookContainer.parentElement;
                 shelf.remove(bookContainer);
             } 
-        } )
+        } );
+
+        changeReadButton.addEventListener('click', () => {
+            this.read = !this.read; // Toggle read status
+            
+            const modal = document.getElementById('modal');
+            const readStatusDiv = modal.querySelector('#readStatusDiv');
+            if (readStatusDiv) {
+                readStatusDiv.textContent = `Have You Read It?: ${this.read ? 'Yes' : 'No'}`;
+            }
+        });
         return bookBox
     }
 }
