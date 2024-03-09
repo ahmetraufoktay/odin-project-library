@@ -116,6 +116,7 @@ button#close { /* close button */
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .book {
+    cursor:pointer;
     position: relative;
     top: 20px;
 }
@@ -133,4 +134,17 @@ button#close { /* close button */
 .wooden-shelf {
     margin: 0;
     padding: 0;
+}
+
+/* modal */
+#modal {
+    display:none;
+    flex-direction: column;
+    width: 300px;
+    gap: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#modal > div {
+    font-size: 24px;
 }
